@@ -1,5 +1,3 @@
 function solution(absolutes, signs) {
-    var answer = signs.map((boolean, i) => !boolean ? absolutes[i] * -1 : absolutes[i])
-    .reduce((acc, cur) => acc + cur, 0);
-    return answer;
+    return absolutes.reduce((acc, cur, i) => acc + (signs[i] ? cur * 1 : cur * -1), 0);
 }
